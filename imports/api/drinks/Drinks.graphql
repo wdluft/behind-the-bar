@@ -1,0 +1,13 @@
+# drink name
+# [ingredients]
+# recipe
+# created/added
+
+type Drink {
+  _id: String!
+  name: String!
+}
+
+type Mutation {
+  createDrink(name: String!): Drink
+}

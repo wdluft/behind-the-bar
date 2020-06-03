@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400|Poppins:400');
+
+:root {
+  /* COLORS */
+  --primary: #ff8ba7;
+  --secondary: #c3f0ca;
+  --tertiary: #ffc6c7;
+  --darkBlack: #33272a;
+  --black: #2e2e2e;
+  --white: #fffffe;
+  --lightGray: #bababa;
+  --skin: #faeee7;
+
+  --bgColor: var(--skin);
+
+  /* Text */
+  --heading1: 4.209rem;
+  --heading2: 3.157rem;
+  --heading3: 2.369rem;
+  --heading4: 1.777rem;
+  --heading5: 1.333rem;
+  --heading6: 0.75rem;
+  --smallText: 0.75rem;
+  --bodyText: 1rem;
+
+  --headingFont: 'Poppins', sans-serif;
+  --bodyFont: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--bodyFont);
+  background: var(--bgColor);
+  color: var(--black);
+}
+
+h1 {
+  font-size: var(--heading1);
+}
+h2 {
+  font-size: var(--heading2);
+}
+h3 {
+  font-size: var(--heading3);
+}
+h4 {
+  font-size: var(--heading4);
+}
+h5 {
+  font-size: var(--heading5);
+}
+h6 {
+  font-size: var(--heading6);
+}
+
+ul {
+  list-style: none;
+}
