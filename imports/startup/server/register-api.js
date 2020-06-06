@@ -8,6 +8,7 @@ import DrinksResolvers from '../../api/drinks/resolvers';
 const testSchema = `type Query {
   hi: String
   drinks: [Drink]
+  drink(id: ID): Drink
 }`;
 
 const typeDefs = [testSchema, DrinksSchema];

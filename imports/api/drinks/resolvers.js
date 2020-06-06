@@ -5,6 +5,9 @@ export default {
     drinks() {
       return Drinks.find({}).fetch();
     },
+    drink(obj, { id }, context, info) {
+      return Drinks.findOne(id);
+    },
   },
 
   Mutation: {
@@ -15,6 +18,10 @@ export default {
       });
       console.log(Drinks.findOne(drinkId));
       return Drinks.findOne(drinkId);
+    },
+    removeDrink(obj, { id }, context, info) {
+      Drinks.remove({ _id: id });
+      return Drinks.find({}).fetch();
     },
   },
 };

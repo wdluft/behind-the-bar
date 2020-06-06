@@ -8,6 +8,11 @@ type Drink {
   name: String!
 }
 
+# type Query {
+#   drink(id: ID): Drink
+# }
+
 type Mutation {
   createDrink(name: String!): Drink
+  removeDrink(id: ID!): [Drink]
 }
