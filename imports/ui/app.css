@@ -3,6 +3,8 @@
 :root {
   /* COLORS */
   --primary: #ff8ba7;
+  --primaryLight: #ffbdcd;
+  --primaryDark: #ff577f;
   --secondary: #c3f0ca;
   --tertiary: #ffc6c7;
   --darkBlack: #33272a;
@@ -12,6 +14,8 @@
   --skin: #faeee7;
 
   --bgColor: var(--skin);
+  --linkColor: var(--primary);
+  --linkHoverColor: var(--primaryLight);
 
   /* Text */
   --heading1: 4.209rem;
@@ -60,4 +64,12 @@ h6 {
 
 ul {
   list-style: none;
+}
+
+a {
+  color: var(--linkColor);
+}
+
+a:hover {
+  color: var(--linkHoverColor);
 }
