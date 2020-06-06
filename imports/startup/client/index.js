@@ -3,19 +3,21 @@ import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import { BrowserRouter as Router } from 'react-router-dom';
 import '/imports/ui/app.css';
+import App from '../../ui/App';
 
 const client = new ApolloClient({
   uri: '/graphql',
 });
 
 const ApolloApp = () => (
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>
+  <Router>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </Router>
 );
-
-import App from '../../ui/App';
 
 Meteor.startup(() => {
   render(<ApolloApp />, document.getElementById('app'));

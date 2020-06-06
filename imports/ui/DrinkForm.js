@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
-import { gql } from 'apollo-boost';
 import { useMutation } from '@apollo/react-hooks';
-
-const CREATE_DRINK = gql`
-  mutation CreateDrink($name: String!) {
-    createDrink(name: $name) {
-      _id
-      name
-    }
-  }
-`;
+import { CREATE_DRINK } from '../api/mutations';
+import { useHistory } from 'react-router-dom';
 
 const DrinkForm = () => {
   const [drinkName, setDrinkName] = useState('');
   const [createDrink] = useMutation(CREATE_DRINK, {
     refetchQueries: ['Drinks'],
   });
+  const history = useHistory();
 
   const submitForm = e => {
     e.preventDefault();
     createDrink({ variables: { name: drinkName } });
     console.log(drinkName);
+    history.push('/');
   };
 
   return (

@@ -1,35 +1,32 @@
-import { gql } from 'apollo-boost';
-import { useQuery } from '@apollo/react-hooks';
+import { Switch, Route } from 'react-router-dom';
 import React from 'react';
 import DrinksForm from './DrinkForm';
-import Nav from './components/Nav';
+import Nav from './Nav';
+import About from './About';
+import Home from './home/Home';
+import Drink from './Drink';
+import AddDrink from './AddDrink';
 
 const App = () => {
-  const { data, loading, error } = useQuery(hiQuery);
-  if (loading) return <h1>Loading...</h1>;
-
   return (
     <div>
       <Nav />
-      <h1>{data.hi}</h1>
-      <DrinksForm />
-      <ul>
-        {data.drinks.map(drink => (
-          <li key={drink._id}>{drink.name}</li>
-        ))}
-      </ul>
+      <Switch>
+        <Route path='/drinks/:drinkid'>
+          <Drink />
+        </Route>
+        <Route path='/about'>
+          <About />
+        </Route>
+        <Route path='/addDrink'>
+          <AddDrink />
+        </Route>
+        <Route path='/'>
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 };
-
-const hiQuery = gql`
-  query Drinks {
-    hi
-    drinks {
-      _id
-      name
-    }
-  }
-`;
 
 export default App;
