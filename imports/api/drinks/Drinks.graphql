@@ -8,9 +8,10 @@ type Drink {
   name: String!
 }
 
-# type Query {
-#   drink(id: ID): Drink
-# }
+type Query {
+  drinks: [Drink]
+  drink(id: ID): Drink
+}
 
 type Mutation {
   createDrink(name: String!): Drink
