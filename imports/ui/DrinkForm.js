@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { CREATE_DRINK } from '../api/mutations';
 import { useHistory } from 'react-router-dom';
+import { Form, Field } from '@leveluptuts/fresh';
 
 const DrinkForm = () => {
   const [drinkName, setDrinkName] = useState('');
@@ -11,20 +12,16 @@ const DrinkForm = () => {
   const history = useHistory();
 
   const submitForm = e => {
-    e.preventDefault();
-    createDrink({ variables: { name: drinkName } });
-    console.log(drinkName);
+    createDrink({ variables: { name: e.drinkName } });
     history.push('/');
   };
 
   return (
     <div>
-      <input
-        type='text'
-        value={drinkName}
-        onChange={e => setDrinkName(e.target.value)}
-      />
-      <button onClick={submitForm}>Submit</button>
+      <Form onSubmit={submitForm}>
+        <Field>Drink Name</Field>
+        {/* <Field type='tags'>Tags</Field> */}
+      </Form>
     </div>
   );
 };
