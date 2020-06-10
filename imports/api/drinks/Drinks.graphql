@@ -6,6 +6,7 @@
 type Drink {
   _id: String!
   name: String!
+  tags: [Tag]
 }
 
 type Query {
