@@ -1,5 +1,5 @@
 # drink name
-# [ingredients]
+# [tags]
 # recipe
 # created/added
 
@@ -15,6 +15,11 @@ type Query {
 }
 
 type Mutation {
-  createDrink(name: String!): Drink
+  createDrink(drink: DrinkInput): Drink
   removeDrink(id: ID!): [Drink]
+}
+
+input DrinkInput {
+  name: String!
+  tags: [TagInput]
 }
