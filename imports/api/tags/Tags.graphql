@@ -11,3 +11,7 @@ extend type Query {
 extend type Mutation {
   createTag(name: String!): Tag
 }
+
+input TagInput {
+  name: String!
+}
