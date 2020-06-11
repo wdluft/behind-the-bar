@@ -12,12 +12,14 @@ const DrinkForm = () => {
   const history = useHistory();
 
   const submitForm = e => {
+    console.log(e.recipe);
     const tagObjs = e.tags.map(tag => {
       return { name: tag };
     });
     const drink = {
       name: e.drinkName,
       tags: tagObjs,
+      recipe: e.recipe,
     };
     createDrink({ variables: { drink } });
     history.push('/');
@@ -26,8 +28,11 @@ const DrinkForm = () => {
   return (
     <div>
       <Form onSubmit={submitForm}>
-        <Field>Drink Name</Field>
+        <Field required>Drink Name</Field>
         <Field type='tags'>Tags</Field>
+        <Field required type='markdown'>
+          Recipe
+        </Field>
       </Form>
     </div>
   );
