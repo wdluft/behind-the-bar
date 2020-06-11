@@ -7,6 +7,7 @@ type Drink {
   _id: String!
   name: String!
   tags: [Tag]
+  recipe: String
 }
 
 type Query {
@@ -22,4 +23,5 @@ type Mutation {
 input DrinkInput {
   name: String!
   tags: [TagInput]
+  recipe: String!
 }
