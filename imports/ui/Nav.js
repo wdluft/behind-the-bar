@@ -7,8 +7,8 @@ const Nav = () => {
     <NavWrapper>
       <Link to='/'>
         <div className='nav__logo'>
-          <h4>The Bean Bar</h4>
           <img src='/logo.svg' alt='Logo' />
+          <h4>The Bean Bar</h4>
         </div>
       </Link>
       <ul>
