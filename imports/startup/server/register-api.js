@@ -4,24 +4,12 @@ import merge from 'lodash/merge';
 
 import DrinksSchema from '../../api/drinks/Drinks.graphql';
 import DrinksResolvers from '../../api/drinks/resolvers';
+import TagsSchema from '../../api/tags/Tags.graphql';
+import TagsResolvers from '../../api/tags/resolvers';
 
-const testSchema = `type Query {
-  hi: String
-  drinks: [Drink]
-  drink(id: ID): Drink
-}`;
+const typeDefs = [DrinksSchema, TagsSchema];
 
-const typeDefs = [testSchema, DrinksSchema];
-
-const testResolvers = {
-  Query: {
-    hi() {
-      return 'Hello world';
-    },
-  },
-};
-
-const resolvers = merge(testResolvers, DrinksResolvers);
+const resolvers = merge(DrinksResolvers, TagsResolvers);
 
 const server = new ApolloServer({
   typeDefs,

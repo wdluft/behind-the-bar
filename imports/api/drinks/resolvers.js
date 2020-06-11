@@ -1,4 +1,5 @@
 import Drinks from './drinks';
+import Tags from '../tags/tags';
 
 export default {
   Query: {
@@ -11,12 +12,33 @@ export default {
   },
 
   Mutation: {
-    createDrink(obj, { name }, context) {
-      console.log(name);
-      const drinkId = Drinks.insert({
-        name,
+    createDrink(obj, { drink }, context) {
+      // Get list of current tags
+      const currentTagsList = Tags.find({}).fetch();
+
+      let drinkTags = [];
+      // for each tag in new drink
+      drink.tags.forEach(tag => {
+        // check if tag already exists
+        const exists = currentTagsList.find(
+          currentTag => currentTag.name === tag.name
+        );
+        // if exists, add tag id to array
+        if (exists) {
+          drinkTags.push(exists);
+        } else {
+          // if tag doesn't exist, create new tag
+          const tagId = Tags.insert({
+            name: tag.name,
+          });
+          drinkTags.push(Tags.findOne(tagId));
+        }
       });
-      console.log(Drinks.findOne(drinkId));
+
+      const drinkId = Drinks.insert({
+        name: drink.name,
+        tags: drinkTags,
+      });
       return Drinks.findOne(drinkId);
     },
     removeDrink(obj, { id }, context, info) {

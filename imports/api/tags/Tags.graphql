@@ -1,0 +1,18 @@
+type Tag {
+  _id: String!
+  name: String!
+  drinks: [Drink]
+}
+
+extend type Query {
+  tags: [Tag]
+}
+
+extend type Mutation {
+  createTag(name: String!): Tag
+  removeTag(id: ID!): [Tag]
+}
+
+input TagInput {
+  name: String!
+}

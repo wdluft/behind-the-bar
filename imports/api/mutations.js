@@ -1,10 +1,12 @@
 import { gql } from 'apollo-boost';
 
 export const CREATE_DRINK = gql`
-  mutation CreateDrink($name: String!) {
-    createDrink(name: $name) {
-      _id
+  mutation CreateDrink($drink: DrinkInput!) {
+    createDrink(drink: $drink) {
       name
+      tags {
+        name
+      }
     }
   }
 `;
