@@ -10,10 +10,17 @@ const Drink = () => {
   });
 
   if (loading) return <h1>Loading...</h1>;
+  console.log(data.drink);
 
   return (
     <div>
       <h1>{data.drink.name}</h1>
+      <ul>
+        {data.drink.tags.map(tag => {
+          console.log(tag.name);
+          return <li key={tag._id}>{tag.name}</li>;
+        })}
+      </ul>
     </div>
   );
 };
