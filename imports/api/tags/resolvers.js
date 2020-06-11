@@ -13,8 +13,11 @@ export default {
       const tagId = Tags.insert({
         name,
       });
-      console.log(Tags.findOne(tagId));
       return Tags.findOne(tagId);
+    },
+    removeTag(obj, { id }, context, info) {
+      Tags.remove({ _id: id });
+      return Tags.find({}).fetch();
     },
   },
 };
