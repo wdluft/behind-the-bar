@@ -7,6 +7,7 @@ export const CREATE_DRINK = gql`
       tags {
         name
       }
+      recipe
     }
   }
 `;

@@ -21,6 +21,7 @@ export const GET_DRINK = gql`
         name
         _id
       }
+      recipe
     }
   }
 `;

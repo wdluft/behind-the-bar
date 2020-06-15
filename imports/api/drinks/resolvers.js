@@ -38,6 +38,7 @@ export default {
       const drinkId = Drinks.insert({
         name: drink.name,
         tags: drinkTags,
+        recipe: drink.recipe,
       });
       return Drinks.findOne(drinkId);
     },
