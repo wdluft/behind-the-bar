@@ -5,15 +5,17 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   return (
     <NavWrapper>
-      <Link to='/'>
-        <div className='nav__logo'>
-          <img src='/logo.svg' alt='Logo' />
-          <h4>The Bean Bar</h4>
-        </div>
+      <Link to='/' className='nav__logo'>
+        <img className='nav__logoImg' src='/logo.svg' alt='Logo' />
+        <h4 className='nav__logoTitle'>The Bean Bar</h4>
       </Link>
       <ul>
-        <li>Drinks</li>
-        <li>About</li>
+        <Link to='/'>
+          <li>Drinks</li>
+        </Link>
+        <Link to='/about'>
+          <li>About</li>
+        </Link>
         <Link to='/addDrink'>
           <li>Add Drink</li>
         </Link>
