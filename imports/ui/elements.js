@@ -24,3 +24,17 @@ export const NavWrapper = styled.nav`
     }
   }
 `;
+
+export const DrinkCardWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+
+  img {
+    width: 100%;
+  }
+`;
+
+export const DrinksGridWrapper = styled.section`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+`;
