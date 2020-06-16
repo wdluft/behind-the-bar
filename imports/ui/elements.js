@@ -26,15 +26,29 @@ export const NavWrapper = styled.nav`
 `;
 
 export const DrinkCardWrapper = styled.div`
+  text-align: center;
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
+  background: var(--tertiary);
+  border-radius: 3px;
+  padding: 1rem;
 
   img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 250px;
+    min-width: 225px;
+  }
+
+  .drinkCard__tag {
+    background: var(--secondary);
+    border-radius: 10px;
+    padding: 0.25rem 1rem;
   }
 `;
 
 export const DrinksGridWrapper = styled.section`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
 `;

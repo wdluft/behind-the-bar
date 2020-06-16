@@ -11,7 +11,9 @@ const DrinkCard = ({ name, link, tags }) => {
       </Link>
       <ul>
         {tags.map(tag => (
-          <li key={tag._id}>{tag.name}</li>
+          <li className='drinkCard__tag' key={tag._id}>
+            {tag.name}
+          </li>
         ))}
       </ul>
     </DrinkCardWrapper>
