@@ -2,20 +2,25 @@
 
 :root {
   /* COLORS */
-  --primary: #ff8ba7;
-  --primaryLight: #ffbdcd;
-  --primaryDark: #ff577f;
-  --secondary: #c3f0ca;
-  --tertiary: #ffc6c7;
-  --darkBlack: #33272a;
-  --black: #2e2e2e;
+  /* Palette based on https://www.happyhues.co/palettes/16 */
+  --primary: #e78fb3;
+  --primaryLight: #f0b8cf;
+  --primaryDark: #de6496;
+  --secondary: #ffc0ad;
+  --secondaryLight: #ffe7e0;
+  --secondaryDark: #ff997a;
+  --tertiary: #9656a1;
+  --brown: #55423d;
+  --darkBrown: #271c19;
+  --black: #140d0b;
   --white: #fffffe;
   --lightGray: #bababa;
-  --skin: #faeee7;
 
-  --bgColor: var(--skin);
+  --bgColor: var(--darkBrown);
   --linkColor: var(--primary);
   --linkHoverColor: var(--primaryLight);
+  --linkActiveColor: var(--primaryDark);
+  --textColor: var(--white);
 
   /* Text */
   --heading1: 4.209rem;
@@ -40,7 +45,7 @@
 body {
   font-family: var(--bodyFont);
   background: var(--bgColor);
-  color: var(--black);
+  color: var(--textColor);
 }
 
 h1 {
@@ -72,4 +77,12 @@ a {
 
 a:hover {
   color: var(--linkHoverColor);
+}
+
+a:active {
+  color: var(--linkActiveColor);
+}
+
+.textPrimary {
+  color: var(--primary);
 }
