@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { DrinkCardWrapper } from '../elements';
 
-const DrinkCard = ({ name, link, tags }) => (
+const DrinkCard = ({ name, link, tags, tagLink }) => (
   <DrinkCardWrapper>
     <img src="/spiced-daiquiri.jpg" alt="Drink" />
     <Link to={link}>
@@ -11,7 +11,7 @@ const DrinkCard = ({ name, link, tags }) => (
     <ul>
       {tags.map(tag => (
         <li className="drinkCard__tag" key={tag._id}>
-          {tag.name}
+          <Link to={`${tagLink}${tag._id}`}>{tag.name}</Link>
         </li>
       ))}
     </ul>

@@ -6,6 +6,7 @@ import About from './About';
 import Home from './home/Home';
 import Drink from './Drink';
 import AddDrink from './AddDrink';
+import DrinksByTag from './DrinksByTag';
 
 const App = () => (
   <div>
@@ -13,6 +14,9 @@ const App = () => (
     <Switch>
       <Route path="/drinks/:drinkid">
         <Drink />
+      </Route>
+      <Route path="/tags/:tagid">
+        <DrinksByTag />
       </Route>
       <Route path="/about">
         <About />
