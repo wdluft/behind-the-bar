@@ -7,26 +7,24 @@ import Home from './home/Home';
 import Drink from './Drink';
 import AddDrink from './AddDrink';
 
-const App = () => {
-  return (
-    <div>
-      <Nav />
-      <Switch>
-        <Route path='/drinks/:drinkid'>
-          <Drink />
-        </Route>
-        <Route path='/about'>
-          <About />
-        </Route>
-        <Route path='/addDrink'>
-          <AddDrink />
-        </Route>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
-    </div>
-  );
-};
+const App = () => (
+  <div>
+    <Nav />
+    <Switch>
+      <Route path="/drinks/:drinkid">
+        <Drink />
+      </Route>
+      <Route path="/about">
+        <About />
+      </Route>
+      <Route path="/addDrink">
+        <AddDrink />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
+  </div>
+);
 
 export default App;
