@@ -2,22 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 // From https://loading.io/css/
-const Loading = () => {
-  return (
-    <LoadingWrapper>
-      <div className='lds-roller'>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </LoadingWrapper>
-  );
-};
+const Loading = () => (
+  <LoadingWrapper>
+    <div className="lds-roller">
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </LoadingWrapper>
+);
 
 export default Loading;
 

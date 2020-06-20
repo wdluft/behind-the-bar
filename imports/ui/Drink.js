@@ -1,11 +1,10 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { useParams } from 'react-router-dom';
+import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useParams, useHistory } from 'react-router-dom';
 import { REMOVE_DRINK } from '../api/mutations';
-import { useMutation } from '@apollo/react-hooks';
-import { useHistory } from 'react-router-dom';
 import { GET_DRINK } from '../api/queries';
 import Drinks from '../api/drinks/drinks';
+import { usePageTitle } from './hooks';
 
 const Drink = () => {
   const { drinkid } = useParams();
@@ -22,9 +21,7 @@ const Drink = () => {
     history.push('/');
   };
 
-  const createRecipeMarkup = recipe => {
-    return { __html: recipe };
-  };
+  const createRecipeMarkup = recipe => ({ __html: recipe });
 
   if (loading) return <h1>Loading...</h1>;
   console.log(data.drink.recipe);
@@ -32,17 +29,17 @@ const Drink = () => {
   return (
     <div>
       <h2>{data.drink.name}</h2>
-      <button onClick={removeDrinkButton}>Remove Drink</button>
+      <button type="button" onClick={removeDrinkButton}>
+        Remove Drink
+      </button>
       <p>Tags:</p>
       <ul>
-        {data.drink.tags.map(tag => {
-          return <li key={tag._id}>{tag.name}</li>;
-        })}
+        {data.drink.tags.map(tag => (
+          <li key={tag._id}>{tag.name}</li>
+        ))}
       </ul>
       <h3>Recipe</h3>
-      <div
-        dangerouslySetInnerHTML={createRecipeMarkup(data.drink.recipe)}
-      ></div>
+      <div dangerouslySetInnerHTML={createRecipeMarkup(data.drink.recipe)} />
     </div>
   );
 };
