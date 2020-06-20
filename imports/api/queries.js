@@ -25,3 +25,16 @@ export const GET_DRINK = gql`
     }
   }
 `;
+
+export const GET_DRINKS_BY_TAG = gql`
+  query DrinksByTag($id: ID!) {
+    drinksByTag(id: $id) {
+      name
+      tags {
+        name
+        _id
+      }
+      _id
+    }
+  }
+`;
