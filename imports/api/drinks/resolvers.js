@@ -16,7 +16,7 @@ export default {
       // Get list of current tags
       const currentTagsList = Tags.find({}).fetch();
 
-      let drinkTags = [];
+      const drinkTags = [];
       // for each tag in new drink
       drink.tags.forEach(tag => {
         // check if tag already exists
