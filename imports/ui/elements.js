@@ -44,13 +44,15 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderContent = styled.div`
-  max-width: 768px;
   height: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  h1 {
+    text-shadow: var(--elevation3);
+  }
 `;
 
 export const DrinkCardWrapper = styled.div`
@@ -58,25 +60,27 @@ export const DrinkCardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  background: var(--tertiary);
+  /* background: var(--brown); */
   border-radius: 3px;
   padding: 1rem;
+  box-shadow: var(--elevation3);
 
   img {
     max-width: 100%;
-    max-height: 250px;
-    min-width: 225px;
+    max-height: 175px;
+    min-width: 150px;
   }
 
   .drinkCard__tag {
     background: var(--secondary);
     border-radius: 10px;
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 0.75rem;
+    font-size: var(--smallText);
   }
 `;
 
-export const DrinksGridWrapper = styled.section`
+export const DrinksGridWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 1rem;
 `;
