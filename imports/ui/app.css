@@ -111,6 +111,26 @@ a:active {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 940px;
   margin: auto;
+}
+
+button,
+.button {
+  background: var(--primary);
+  color: var(--darkBrown);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+button,
+.button:hover {
+  background: var(--primaryLight);
+  color: var(--darkBrown);
+}
+
+button,
+.button:active {
+  background: var(--primaryDark);
+  color: var(--darkBrown);
 }
