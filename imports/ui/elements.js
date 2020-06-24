@@ -31,7 +31,7 @@ export const NavWrapper = styled.nav`
 `;
 
 export const HeaderWrapper = styled.header`
-  height: 100vh;
+  height: 55vh;
   /* BG image by Chris F from Pexels https://www.pexels.com/photo/assorted-wine-bottles-1283219/ */
   background-image: linear-gradient(
       rgba(39, 28, 25, 0.55),
@@ -41,17 +41,34 @@ export const HeaderWrapper = styled.header`
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (min-width: 768px) {
+    height: 75vh;
+  }
 `;
 
 export const HeaderContent = styled.div`
   height: 100%;
   margin: auto;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  h1 {
-    text-shadow: var(--elevation3);
+  align-items: center;
+  text-align: center;
+
+  h5 {
+    font-weight: normal;
+  }
+
+  a {
+    margin-top: 1rem;
+    text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    align-items: flex-start;
+    text-align: left;
   }
 `;
 
