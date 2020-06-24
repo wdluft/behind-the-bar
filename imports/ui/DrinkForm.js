@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
-import { CREATE_DRINK } from '../api/mutations';
 import { useHistory } from 'react-router-dom';
 import { Form, Field } from '@leveluptuts/fresh';
+import { CREATE_DRINK } from '../api/mutations';
 
 const DrinkForm = () => {
   const [drinkName, setDrinkName] = useState('');
@@ -13,13 +13,12 @@ const DrinkForm = () => {
 
   const submitForm = e => {
     console.log(e.recipe);
-    const tagObjs = e.tags.map(tag => {
-      return { name: tag };
-    });
+    const tagObjs = e.tags.map(tag => ({ name: tag }));
     const drink = {
       name: e.drinkName,
       tags: tagObjs,
       recipe: e.recipe,
+      created: new Date(),
     };
     createDrink({ variables: { drink } });
     history.push('/');
@@ -29,8 +28,8 @@ const DrinkForm = () => {
     <div>
       <Form onSubmit={submitForm}>
         <Field required>Drink Name</Field>
-        <Field type='tags'>Tags</Field>
-        <Field required type='markdown'>
+        <Field type="tags">Tags</Field>
+        <Field required type="markdown">
           Recipe
         </Field>
       </Form>
