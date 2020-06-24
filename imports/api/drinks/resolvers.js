@@ -1,6 +1,9 @@
 import Drinks from './drinks';
 import Tags from '../tags/tags';
 
+const { GraphQLScalarType } = require('graphql');
+const { Kind } = require('graphql/language');
+
 export default {
   Query: {
     drinks() {
@@ -39,6 +42,7 @@ export default {
         name: drink.name,
         tags: drinkTags,
         recipe: drink.recipe,
+        created: drink.created,
       });
       return Drinks.findOne(drinkId);
     },
@@ -47,4 +51,21 @@ export default {
       return Drinks.find({}).fetch();
     },
   },
+
+  Date: new GraphQLScalarType({
+    name: 'Date',
+    description: 'Date custom scalar type',
+    parseValue(value) {
+      return new Date(value); // value from the client
+    },
+    serialize(value) {
+      return value.getTime(); // value sent to the client
+    },
+    parseLiteral(ast) {
+      if (ast.kind === Kind.INT) {
+        return parseInt(ast.value, 10); // ast value is always in string format
+      }
+      return null;
+    },
+  }),
 };

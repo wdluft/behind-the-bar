@@ -8,6 +8,7 @@ type Drink {
   name: String!
   tags: [Tag]
   recipe: String
+  created: Date
 }
 
 type Query {
@@ -24,4 +25,7 @@ input DrinkInput {
   name: String!
   tags: [TagInput]
   recipe: String!
+  created: Date
 }
+
+scalar Date

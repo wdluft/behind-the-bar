@@ -5,6 +5,7 @@ export const GET_DRINKS = gql`
     drinks {
       _id
       name
+      created
       tags {
         name
         _id
@@ -22,6 +23,7 @@ export const GET_DRINK = gql`
         _id
       }
       recipe
+      created
     }
   }
 `;
@@ -30,11 +32,12 @@ export const GET_DRINKS_BY_TAG = gql`
   query DrinksByTag($id: ID!) {
     drinksByTag(id: $id) {
       name
+      _id
+      created
       tags {
         name
         _id
       }
-      _id
     }
   }
 `;

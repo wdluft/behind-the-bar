@@ -18,6 +18,7 @@ const DrinkGrid = () => {
           link={`/drinks/${drink._id}`}
           tagLink="/tags/"
           tags={drink.tags}
+          created={drink.created != null ? drink.created : 1593028454982}
         />
       ))}
     </DrinksGridWrapper>

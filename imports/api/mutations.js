@@ -8,6 +8,7 @@ export const CREATE_DRINK = gql`
         name
       }
       recipe
+      created
     }
   }
 `;
