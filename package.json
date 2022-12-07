@@ -13,7 +13,7 @@
     "apollo-server-express": "^2.14.2",
     "bcrypt": "^5.0.0",
     "graphql": "^15.0.0",
-    "graphql-tools": "^6.0.5",
+    "graphql-tools": "^6.2.6",
     "lodash": "^4.17.21",
     "meteor-node-stubs": "^1.0.0",
     "react": "^16.13.1",
